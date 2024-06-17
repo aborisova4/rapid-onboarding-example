@@ -11,6 +11,12 @@ sources:
     tables:
       - name: customers
         description: One record per customer.
+        columns:
+          - name: id
+            description: Primary key for customers.
+            tests:
+              - unique
+              - not_null
       - name: orders
         description: One record per order. Includes cancelled and deleted orders.
         loaded_at_field: _etl_loaded_at
