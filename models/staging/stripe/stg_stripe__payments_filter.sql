@@ -7,3 +7,4 @@ select
     {{cents_to_dollars('amount')}} as amount,
     created as created_at
 from {{ source('stripe', 'payment') }}
+{{ limit_data_in_dev('created') }}
